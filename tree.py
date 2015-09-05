@@ -1,7 +1,3 @@
-# CSE6242/CX4242 Homework 4 Pseudocode
-# You can use this skeleton code for Task 1 of Homework 4.
-# You don't have to use this code. You can implement your own code from scratch if you want.
-
 import csv, math
 from random import shuffle
 
@@ -11,10 +7,6 @@ class TreeNode:
 		self.children = {}
 		self.split_attr = None
 		self.answer = None
-
-# Implement your decision tree below
-#class DecisionTree():
-	#tree = {}
 
 def learn(training_set, attr_dict, root=None):
 	#self.tree = {}
@@ -201,7 +193,6 @@ def run_decision_tree():
 	print "Number of records: %d" % len(data)
 	accuracy_overall = []
 	# Split training/test sets
-	# You need to modify the following code for cross validation.
 
 	#Shuffle the data. Will change the building of decision tree if a lot of same labels are continuous in the dataset.
 	shuffle(data)
@@ -216,7 +207,6 @@ def run_decision_tree():
 		for attr in attrs:
 			attr_dict[attr] = num
 			num += 1
-		#tree = DecisionTree()
 		# Construct a tree using training set
 		tree = learn( training_set, attr_dict, None )
 
@@ -236,7 +226,6 @@ def run_decision_tree():
 	for acc in accuracy_overall:
 		sum += acc
 	accuracy_f = sum/float(len(accuracy_overall))
-	# Writing results to a file (DO NOT CHANGE)
 	f = open("result.txt", "w")
 	f.write("accuracy: %.4f" % accuracy_f)
 	f.close()
